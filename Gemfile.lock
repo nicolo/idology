@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     idology (1.9.4)
-      active_support (~> 3.0)
+      active_support (~> 3)
       happymapper (~> 0.4.0)
       httparty (~> 0.8.1)
       idology
