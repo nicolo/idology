@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     idology (1.9.4)
-      active_support (~> 3)
       happymapper (~> 0.4.0)
       httparty (~> 0.8.1)
       idology
@@ -10,9 +9,6 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    active_support (3.0.0)
-      activesupport (= 3.0.0)
-    activesupport (3.0.0)
     fakeweb (1.2.8)
     git (1.2.5)
     happymapper (0.4.0)
