@@ -5,6 +5,7 @@ module IDology
     element :id, Integer, :tag => 'id-number'
     element :failed, String
     element :error, String
+    element :iq_challenge_summary_result, String, :tag => 'iq-challenge-summary-result'
     element :iq_summary_result, String, :tag => 'iq-summary-result'
     element :iq_indicated, IDology::Boolean, :tag => 'idliveq-indicated', :parser => :parse
     element :eligible_for_questions, IDology::Boolean, :tag => 'eligible-for-questions', :parser => :parse
