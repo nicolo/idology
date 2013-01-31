@@ -88,7 +88,7 @@ module IDology
 
       self.response = Subject.post(Paths[url], :body => data)
 
-      raise IDology::Error, self.response.errors if self.response.errors?
+      raise IDology::Error.new(self.response.errors) if self.response.errors?
 
       self.response
     #rescue Timeout::Error, Net::HTTPError => e
