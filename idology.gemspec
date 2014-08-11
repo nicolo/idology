@@ -8,106 +8,25 @@ Gem::Specification.new do |s|
   s.version = "1.9.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Phil Ripperger", "Daniel Morrison"]
-  s.date = %q{2011-02-10}
+  s.authors = ["Phil Ripperger", "Daniel Morrison", "Sean Todd"]
+  s.date = '2014-08-11'
   s.description = %q{Ruby interface to the IDology API. Verify people's identities easily!}
-  s.email = %q{info@collectiveidea.com}
+  s.email = 'sean@paynearme.com'
   s.extra_rdoc_files = [
     "LICENSE",
     "README"
   ]
-  s.files = [
-    "Gemfile",
-    "Gemfile.lock",
-    "LICENSE",
-    "README",
-    "Rakefile",
-    "VERSION",
-    "idology.gemspec",
-    "lib/boolean.rb",
-    "lib/certs/cacert.pem",
-    "lib/idology.rb",
-    "lib/idology_test_helper.rb",
-    "lib/iq_challenge_result.rb",
-    "lib/iq_error.rb",
-    "lib/iq_result.rb",
-    "lib/qualifier.rb",
-    "lib/question.rb",
-    "lib/response.rb",
-    "lib/result.rb",
-    "lib/subject.rb",
-    "lib/summary_result.rb",
-    "lib/velocity_result.rb",
-    "spec/api_response_spec.rb",
-    "spec/fixtures/1_answer_incorrect_response.xml",
-    "spec/fixtures/2_answers_incorrect_response.xml",
-    "spec/fixtures/3_answers_incorrect_response.xml",
-    "spec/fixtures/all_answers_correct_challenge_response.xml",
-    "spec/fixtures/all_answers_correct_response.xml",
-    "spec/fixtures/challenge_questions_response.xml",
-    "spec/fixtures/error_response.xml",
-    "spec/fixtures/incomplete_answers_response.xml",
-    "spec/fixtures/match_found_response.xml",
-    "spec/fixtures/match_found_single_address.xml",
-    "spec/fixtures/match_found_ssn_does_not_match.xml",
-    "spec/fixtures/match_found_ssn_invalid.xml",
-    "spec/fixtures/match_found_ssn_issued_prior_to_dob.xml",
-    "spec/fixtures/match_found_ssn_unavailable.xml",
-    "spec/fixtures/match_found_subject_deceased.xml",
-    "spec/fixtures/match_found_success.xml",
-    "spec/fixtures/match_found_thin_file.xml",
-    "spec/fixtures/no_match_response.xml",
-    "spec/fixtures/no_questions_response.xml",
-    "spec/fixtures/one_answer_incorrect_challenge_response.xml",
-    "spec/fixtures/questions_response.xml",
-    "spec/fixtures/sample_config.yml",
-    "spec/fixtures/two_answers_incorrect_challenge_response.xml",
-    "spec/fixtures/unknown_response.xml",
-    "spec/fixtures/velocity_warning.xml",
-    "spec/fixtures/verification_timeout_response.xml",
-    "spec/idology_spec.rb",
-    "spec/response_spec.rb",
-    "spec/responses/no_address.xml",
-    "spec/spec_helper.rb",
-    "spec/subject_spec.rb"
-  ]
-  s.homepage = %q{http://github.com/collectiveidea/idology}
+  s.files = `git ls-files`.split("\n")
+  s.homepage = %q{http://github.com/descentintomael/idology}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.4.2}
   s.summary = %q{Ruby interface to the IDology API}
-  s.test_files = [
-    "spec/api_response_spec.rb",
-    "spec/idology_spec.rb",
-    "spec/response_spec.rb",
-    "spec/spec_helper.rb",
-    "spec/subject_spec.rb"
-  ]
+  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
+  s.add_dependency 'happymapper', '~> 0.4.0'
+  s.add_dependency 'httparty', '~> 0.8.1'
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<idology>, [">= 0"])
-      s.add_runtime_dependency(%q<happymapper>, ["~> 0.4.0"])
-      s.add_runtime_dependency(%q<httparty>, ["~> 0.8.1"])
-      s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 1.3.0"])
-      s.add_development_dependency(%q<fakeweb>, ["= 1.2.8"])
-    else
-      s.add_dependency(%q<idology>, [">= 0"])
-      s.add_dependency(%q<happymapper>, ["~> 0.4.0"])
-      s.add_dependency(%q<httparty>, ["~> 0.8.1"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 1.3.0"])
-      s.add_dependency(%q<fakeweb>, ["= 1.2.8"])
-    end
-  else
-    s.add_dependency(%q<idology>, [">= 0"])
-    s.add_dependency(%q<happymapper>, ["~> 0.4.0"])
-    s.add_dependency(%q<httparty>, ["~> 0.8.1"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 1.3.0"])
-    s.add_dependency(%q<fakeweb>, ["= 1.2.8"])
-  end
+  s.add_development_dependency 'rspec', '~> 1.3.0'
+  s.add_development_dependency 'fakeweb', '= 1.2.8'
 end
 
