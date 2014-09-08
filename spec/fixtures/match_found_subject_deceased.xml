@@ -1,1 +1,33 @@
-<?xml version="1.0"?><response><id-number>5922430</id-number><summary-result><key>id.success</key><message>Match Found</message></summary-result><results><key>result.match</key><message>Pass</message></results><idliveq-indicated>false</idliveq-indicated><eligible-for-questions>true</eligible-for-questions><qualifiers><qualifier><key>resultcode.subject.deceased</key><message>Subject is Deceased</message></qualifier><qualifier><key>resultcode.zip.does.not.match</key><message>ZIP Code Does Not Match</message></qualifier></qualifiers></response>
+<?xml version="1.0"?>
+<response>
+  <id-number>09876543210</id-number>
+  <summary-result>
+    <key>id.failure</key>
+    <message>FAIL</message>
+  </summary-result>
+  <results>
+    <key>result.match</key>
+    <message>ID Located</message>
+  </results>
+  <idliveq-indicated>false</idliveq-indicated>
+  <eligible-for-questions>false</eligible-for-questions>
+  <qualifiers>
+    <qualifier>
+      <key>resultcode.no.dob.available</key>
+      <message>No DOB Available</message>
+    </qualifier>
+    <qualifier>
+      <key>resultcode.subject.deceased</key>
+      <message>Subject is Deceased</message>
+    </qualifier>
+    <qualifier>
+      <key>resultcode.data.strength.alert</key>
+      <message>Data Strength Alert</message>
+    </qualifier>
+    <qualifier>
+      <key>resultcode.single.address.in.file</key>
+      <message>Single Address in File</message>
+    </qualifier>
+  </qualifiers>
+  <idnotescore>0</idnotescore>
+</response>
