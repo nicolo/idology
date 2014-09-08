@@ -185,12 +185,12 @@ describe Subject do
     describe 'from HTTP' do
       it 'should catch Timeout::Error and re-raise' do
         Subject.stub(:post).and_raise(Timeout::Error)
-        lambda{@subject.locate}.should raise_error(IDology::Error)
+        lambda{@subject.locate}.should raise_error(Timeout::Error)
       end
       
       it 'should catch Net::HTTPError and re-raise' do
         Subject.stub(:post).and_raise(Net::HTTPError.new('fake', 'fake'))
-        lambda{@subject.locate}.should raise_error(IDology::Error)
+        lambda{@subject.locate}.should raise_error(Net::HTTPError)
       end
     end
   end  
