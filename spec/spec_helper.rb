@@ -2,14 +2,8 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'rubygems'
 require 'idology'
-require 'spec'
-require 'spec/autorun'
 require 'idology_test_helper'
 require 'set' # for Enumerable#to_set
-
-Spec::Runner.configure do |config|
-
-end
 
 module RequestSpecHelper
   include IDology

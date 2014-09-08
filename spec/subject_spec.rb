@@ -2,7 +2,7 @@ require 'spec_helper'
 
 include IDology
 
-share_examples_for "Any Request" do
+shared_examples "Any Request" do
   it "should be able to locate a person" do
     @result.should_not be_false
   end

@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'happymapper', '~> 0.4.0'
   s.add_dependency 'httparty', '~> 0.8.1'
 
-  s.add_development_dependency 'rspec', '~> 1.3.0'
+  s.add_development_dependency 'rspec', '2.13.0'
   s.add_development_dependency 'fakeweb', '= 1.2.8'
 end
 
