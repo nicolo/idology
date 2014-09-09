@@ -35,6 +35,10 @@ module IDology
     def identified?
       !error? && (IDology[:summary_results] ? summary_result.success? : result.match?)
     end
+
+    def matched?
+      !error? && result.match?
+    end
     
     def timeout?
       [iq_result, iq_challenge_result].compact.map(&:key).include?('result.timeout')

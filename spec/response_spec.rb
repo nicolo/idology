@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'byebug'
 
 include IDology
 
@@ -46,6 +47,21 @@ describe Response do
         question.answers.size.should == 6
         question.answers.last.should == 'None of the above'
       end
+    end
+  end
+
+  describe 'match identified with failure' do
+    before do
+      @response = parse_response 'match_found_subject_deceased'
+      IDology[:summary_results] = true
+    end
+
+    it 'is not identified' do
+      @response.should_not be_identified
+    end
+
+    it 'is matched' do
+      @response.should be_matched
     end
   end
   
