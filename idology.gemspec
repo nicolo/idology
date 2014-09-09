@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     "LICENSE",
     "README"
   ]
+  s.license = 'MIT'
   s.files = `git ls-files`.split("\n")
   s.homepage = %q{http://github.com/descentintomael/idology}
   s.require_paths = ["lib"]
