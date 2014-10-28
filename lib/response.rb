@@ -9,6 +9,7 @@ module IDology
     element :iq_summary_result, String, :tag => 'iq-summary-result'
     element :iq_indicated, IDology::Boolean, :tag => 'idliveq-indicated', :parser => :parse
     element :eligible_for_questions, IDology::Boolean, :tag => 'eligible-for-questions', :parser => :parse
+    element :id_note_score, Integer, :tag => 'idnotescore'
     
     has_one :result, IDology::Result
     has_one :summary_result, IDology::SummaryResult

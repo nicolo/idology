@@ -120,6 +120,16 @@ describe Response do
       @response.should_not be_eligible_for_verification
     end
   end
+
+  describe 'id_note_score' do
+    before do
+      @response = parse_response('match_found_global_watch_list')
+    end
+
+    it "should retrieve the score" do
+      @response.id_note_score.should eq 500
+    end
+  end
   
   describe "fixtures" do
     Dir.glob(File.dirname(__FILE__)+'/fixtures/*.xml').each do |fixture|
