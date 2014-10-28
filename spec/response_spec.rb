@@ -75,6 +75,19 @@ describe Response do
       @response.qualifiers.size.should == 2
     end
   end
+
+  describe "with restrictions" do
+    before do
+      @response = parse_response('match_found_global_watch_list')
+    end
+
+    it "should set the restrictions" do
+      @response.restrictions.should_not be_empty
+      @response.restrictions.size.should == 1
+      @response.restrictions.first.message.should eq 'Patriot Act Alert'
+      @response.restrictions.first.key.should eq 'global.watch.list'
+    end
+  end
   
   describe "with IQ result" do
     before do
@@ -121,7 +134,7 @@ describe Response do
     end
   end
 
-  describe 'id_note_score' do
+  describe 'with ID Note Score' do
     before do
       @response = parse_response('match_found_global_watch_list')
     end

@@ -17,6 +17,7 @@ module IDology
     has_one :iq_challenge_result, IDology::IQChallengeResult
     has_one :iq_error, IDology::IQError
     has_many :qualifiers, IDology::Qualifier
+    has_many :restrictions, IDology::Restriction
     has_many :questions, IDology::Question
     has_many :velocity_results, IDology::VelocityResult
     
