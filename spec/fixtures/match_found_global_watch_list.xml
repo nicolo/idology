@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<response>
+  <id-number>1142945560</id-number>
+  <summary-result>
+    <key>id.success</key>
+    <message>PASS</message>
+  </summary-result>
+  <results>
+    <key>result.match</key>
+    <message>ID Located</message>
+  </results>
+  <idliveq-indicated>false</idliveq-indicated>
+  <eligible-for-questions>true</eligible-for-questions>
+  <restriction>
+    <key>global.watch.list</key>
+    <message>Patriot Act Alert</message>
+  </restriction>
+  <idnotescore>0</idnotescore>
+</response>
