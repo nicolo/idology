@@ -87,6 +87,17 @@ describe Response do
       @response.restrictions.first.message.should eq 'Patriot Act Alert'
       @response.restrictions.first.key.should eq 'global.watch.list'
     end
+
+    describe "with global watch list hit" do
+      # No new setup since are already using that as an example
+      it "should return true for global_watch_list_hit?" do
+        @response.should be_global_watch_list_hit
+      end
+
+      it "should return false if not a hit" do
+        parse_response("match_found_response").should_not be_global_watch_list_hit
+      end
+    end
   end
   
   describe "with IQ result" do

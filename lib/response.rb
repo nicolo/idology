@@ -54,5 +54,9 @@ module IDology
     def errors
       [failed, error].compact.map{|e| e.to_s}.join(',')
     end
+
+    def global_watch_list_hit?
+      restrictions.any? &:global_watch_list_hit?
+    end
   end
 end
