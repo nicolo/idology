@@ -1,6 +1,7 @@
 module IDology
   class Response
     include HappyMapper
+    attr_accessor :xml
     
     element :id, Integer, :tag => 'id-number'
     element :failed, String
@@ -57,6 +58,12 @@ module IDology
 
     def global_watch_list_hit?
       restrictions.any? &:global_watch_list_hit?
+    end
+
+    def self.parse(xml)
+      response = super
+      response.xml = xml
+      response
     end
   end
 end

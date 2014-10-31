@@ -162,6 +162,13 @@ describe Response do
         lambda{ XML::Parser.string(load_response(file)).parse }.should_not raise_error
       end
     end
-    
+  end
+
+  describe 'saving the xml' do
+    it 'makes it accessible' do
+      file = 'match_found_success'
+      parse_response(file).xml.should eq load_response(file)
+    end
   end
 end
+
