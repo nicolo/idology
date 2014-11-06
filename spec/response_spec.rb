@@ -31,6 +31,16 @@ describe Response do
       end
     end
   end
+
+  describe 'identifying a match with found restricted' do
+    before do
+      @response = parse_response('match_found_coppa')
+    end
+
+    it 'should be identified' do
+      @response.should be_identified
+    end
+  end
   
   describe "with questions" do
     before do

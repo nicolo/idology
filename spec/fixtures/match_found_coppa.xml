@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<response>
+  <id-number>1144500742</id-number>
+  <summary-result>
+    <key>id.failure</key>
+    <message>FAIL</message>
+  </summary-result>
+  <results>
+    <key>result.match.restricted</key>
+    <message>result.match.restricted</message>
+  </results>
+  <idliveq-indicated>false</idliveq-indicated>
+  <eligible-for-questions>false</eligible-for-questions>
+  <qualifiers>
+    <qualifier>
+      <key>resultcode.coppa.alert</key>
+      <message>COPPA Alert</message>
+    </qualifier>
+  </qualifiers>
+</response>

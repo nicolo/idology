@@ -6,7 +6,7 @@ module IDology
     element :message, String
     
     def match?
-      key == 'result.match'
+      key == 'result.match' || key == 'result.match.restricted'
     end
   end
 end
