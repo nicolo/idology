@@ -23,7 +23,13 @@ module IDology
       self.verified = self.challenge = self.eligible_for_verification = false
       self.qualifiers = ""
 
-      data.each {|key, value| self.send "#{key}=", value }
+      data.each do |key, value|
+        if SearchAttributes.include?(key) || CommonAttributes.include?(key)
+          self.send "#{key}=", value
+        else
+          raise IDology::Error.new("Unknow subject attribute '#{key}'")
+        end
+      end
     end
 
     def idNumber

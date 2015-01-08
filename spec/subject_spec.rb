@@ -25,7 +25,18 @@ describe Subject do
     IDology[:password] = 'fake'
     IDology[:summary_results] = false
   end
-  
+
+  describe "initialize" do
+    it "should only allow keys from SearchAttributes and CommonAttributes" do
+      test_value = '13414314'
+      Subject.new({ idNumber: test_value }).idNumber.should be_eql(test_value)
+    end
+
+    it "should not allow any other keys" do
+      lambda { Subject.new({ foo: 'Bar' })}.should raise_error(IDology::Error)
+    end
+  end
+
   describe "locate" do
     it "should error if username is not set" do
       IDology[:username] = ''
