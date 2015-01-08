@@ -102,8 +102,10 @@ module IDology
     def answer_params
       answers = {}
       questions.each_with_index do |question, index|
-        answers["question#{index + 1}Type"] = question.type
-        answers["question#{index + 1}Answer"] = question.chosen_answer
+        if question.chosen_answer
+          answers["question#{index + 1}Type"] = question.type
+          answers["question#{index + 1}Answer"] = question.chosen_answer
+        end
       end
       answers
     end

@@ -131,6 +131,10 @@ describe Subject do
     it "should raise an error when checking the incorrect answers" do
       pending
     end
+
+    it "should not send unanswered questions" do
+      @subject.send(:answer_params).should be_empty
+    end
   end
   
   describe 'get_challenge_questions' do
