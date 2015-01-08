@@ -82,7 +82,6 @@ describe Subject do
       fake_idology(:search, 'match_found_response')
       @subject = Subject.new
       @subject.idNumber = nil
-      @subject.questions = [Question.new]
     end
     
     it "submit_answers should raise an error" do

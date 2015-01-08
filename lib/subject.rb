@@ -17,12 +17,10 @@ module IDology
 
     attr_accessor *SearchAttributes
     attr_accessor *CommonAttributes
-    attr_accessor :response, :qualifiers, :verification_questions, :eligible_for_verification, :verified, :challenge, :challenge_questions, :questions
+
+    attr_accessor :response
 
     def initialize(data = {})
-      self.verified = self.challenge = self.eligible_for_verification = false
-      self.qualifiers = ""
-
       data.each do |key, value|
         if SearchAttributes.include?(key) || CommonAttributes.include?(key)
           self.send "#{key}=", value
