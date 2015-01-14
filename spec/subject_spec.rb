@@ -25,7 +25,18 @@ describe Subject do
     IDology[:password] = 'fake'
     IDology[:summary_results] = false
   end
-  
+
+  describe "initialize" do
+    it "should only allow keys from SearchAttributes and CommonAttributes" do
+      test_value = '13414314'
+      Subject.new({ idNumber: test_value }).idNumber.should be_eql(test_value)
+    end
+
+    it "should not allow any other keys" do
+      lambda { Subject.new({ foo: 'Bar' })}.should raise_error(IDology::Error)
+    end
+  end
+
   describe "locate" do
     it "should error if username is not set" do
       IDology[:username] = ''
@@ -71,7 +82,6 @@ describe Subject do
       fake_idology(:search, 'match_found_response')
       @subject = Subject.new
       @subject.idNumber = nil
-      @subject.questions = [Question.new]
     end
     
     it "submit_answers should raise an error" do
@@ -120,6 +130,10 @@ describe Subject do
     
     it "should raise an error when checking the incorrect answers" do
       pending
+    end
+
+    it "should not send unanswered questions" do
+      @subject.send(:answer_params).should be_empty
     end
   end
   

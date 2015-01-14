@@ -17,13 +17,17 @@ module IDology
 
     attr_accessor *SearchAttributes
     attr_accessor *CommonAttributes
-    attr_accessor :response, :qualifiers, :verification_questions, :eligible_for_verification, :verified, :challenge, :challenge_questions, :questions
+
+    attr_accessor :response
 
     def initialize(data = {})
-      self.verified = self.challenge = self.eligible_for_verification = false
-      self.qualifiers = ""
-
-      data.each {|key, value| self.send "#{key}=", value }
+      data.each do |key, value|
+        if SearchAttributes.include?(key) || CommonAttributes.include?(key)
+          self.send "#{key}=", value
+        else
+          raise IDology::Error.new("Unknow subject attribute '#{key}'")
+        end
+      end
     end
 
     def idNumber
@@ -98,8 +102,10 @@ module IDology
     def answer_params
       answers = {}
       questions.each_with_index do |question, index|
-        answers["question#{index + 1}Type"] = question.type
-        answers["question#{index + 1}Answer"] = question.chosen_answer
+        if question.chosen_answer
+          answers["question#{index + 1}Type"] = question.type
+          answers["question#{index + 1}Answer"] = question.chosen_answer
+        end
       end
       answers
     end
