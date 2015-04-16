@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
   s.add_dependency 'happymapper', '0.4.1'
-  s.add_dependency 'httparty', '0.8.3'
+  s.add_dependency 'httparty', '0.13.3'
 
   s.add_development_dependency 'rspec', '2.13.0'
   s.add_development_dependency 'fakeweb', '= 1.2.8'
