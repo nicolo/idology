@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    idology (1.9.4)
-      happymapper (~> 0.4.0)
-      httparty (~> 0.8.1)
+    idology (1.10.4)
+      happymapper (= 0.4.1)
+      httparty (= 0.8.3)
 
 GEM
   remote: http://rubygems.org/
@@ -15,8 +15,8 @@ GEM
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
-    libxml-ruby (2.7.0)
-    multi_json (1.10.1)
+    libxml-ruby (2.8.0)
+    multi_json (1.11.0)
     multi_xml (0.5.5)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
