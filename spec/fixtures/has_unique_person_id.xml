@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<response>
+  <id-number>1202095020</id-number>
+  <invoice></invoice>
+  <summary-result>
+    <key>id.failure</key>
+    <message>FAIL</message>
+  </summary-result>
+  <results>
+    <key>result.match</key>
+    <message>ID Located</message>
+  </results>
+  <located-record>
+    <uniquepersonid>001791412346</uniquepersonid>
+  </located-record>
+  <qualifiers>
+    <qualifier>
+      <key>resultcode.no.dob.available</key>
+      <message>No DOB Available</message>
+    </qualifier>
+    <qualifier>
+      <key>resultcode.subject.deceased</key>
+      <message>Subject is Deceased</message>
+    </qualifier>
+    <qualifier>
+      <key>resultcode.data.strength.alert</key>
+      <message>Data Strength Alert</message>
+    </qualifier>
+    <qualifier>
+      <key>resultcode.single.address.in.file</key>
+      <message>Single Address in File</message>
+    </qualifier>
+  </qualifiers>
+  <idnotescore>0</idnotescore>
+  <idliveq-error>
+    <key>id.not.eligible.for.questions</key>
+    <message>Not Eligible For Questions</message>
+  </idliveq-error>
+</response>
