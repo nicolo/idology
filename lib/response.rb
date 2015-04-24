@@ -3,7 +3,7 @@ module IDology
     include HappyMapper
     attr_accessor :xml
     
-    element :id, Integer, :tag => 'id-number'
+    element :id, Integer, :tag => 'id-number' # This is the message ID
     element :failed, String
     element :error, String
     element :iq_challenge_summary_result, String, :tag => 'iq-challenge-summary-result'
@@ -11,7 +11,8 @@ module IDology
     element :iq_indicated, IDology::Boolean, :tag => 'idliveq-indicated', :parser => :parse
     element :eligible_for_questions, IDology::Boolean, :tag => 'eligible-for-questions', :parser => :parse
     element :id_note_score, Integer, :tag => 'idnotescore'
-    
+
+    has_one :located_record, IDology::LocatedRecord
     has_one :result, IDology::Result
     has_one :summary_result, IDology::SummaryResult
     has_one :iq_result, IDology::IQResult
