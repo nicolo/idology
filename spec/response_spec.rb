@@ -163,6 +163,17 @@ describe Response do
       @response.id_note_score.should eq 500
     end
   end
+
+  describe 'with unique person id' do
+    before do
+      @response = parse_response('has_unique_person_id')
+    end
+
+    it "should locate a unique person id" do
+      expect(@response.located_record.uniquepersonid).to eq(1791412346) # TODO: Getting INT, shouldn't this be string?
+    end
+
+  end
   
   describe "fixtures" do
     Dir.glob(File.dirname(__FILE__)+'/fixtures/*.xml').each do |fixture|
