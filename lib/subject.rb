@@ -5,7 +5,9 @@ module IDology
     # pem File.read(File.dirname(__FILE__) + '/certs/cacert.pem')
     parser lambda{|r, format| IDology::Response.parse(r.to_s)}
 
-    SearchAttributes = [:firstName, :lastName, :address, :city, :state, :zip, :ssnLast4, :ssn, :dobMonth, :dobYear]
+    SearchAttributes = [:firstName, :lastName, :address, :city, :state, :zip,
+                        :ssnLast4, :ssn, :dobDay, :dobMonth, :dobYear,
+                        :telephone, :email]
     CommonAttributes = [:idNumber, :uid]
 
     Paths = {
